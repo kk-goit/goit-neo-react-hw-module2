@@ -42,7 +42,7 @@ function App() {
       <Description />
       <Options totalFeedbacks={totalFeedbacks} feedbackKeys={Object.keys(feedbacks)} addFeedback={addFeedback} resetFeedbacks={resetFeedbacks} />
       {totalFeedbacks > 0 ?
-        (<Feedback feedbacks={feedbacks} totalFeedbacks={totalFeedbacks} />)
+        (<Feedback feedbacks={feedbacks} totalFeedbacks={totalFeedbacks} positiveFeedbacks={Math.round((feedbacks.good / totalFeedbacks) * 100) + "%"} />)
         : (<Notification msg="No feedback yet"/>)
       }
     </>
